@@ -56,4 +56,5 @@ default:
     alert('Unknown operation');       
 }
 }while(confirm('Повторный рассчет?'));
+alert('Всего доброго!');
 }
