@@ -1,6 +1,6 @@
 function failnumber(a)
 {
-if (+a)
+if (+a||a=='0')
 return (+a);
 else    
 {
@@ -45,6 +45,11 @@ case '*':
 case '/':
     numb2=failnumber(numb2=prompt('Введите делитель'));
     if (numb2=='false') continue;
+    if (numb2=='0') 
+    {
+        alert ('На ноль делить нельзя');
+        continue;
+    }
     alert ('Результат деления '+delenie(numb1,numb2)); 
     break;
 case '**':
