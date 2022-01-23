@@ -8,7 +8,7 @@ else
     return (a='false');
 }
 }
-function summa(a,b)
+function sum(a,b)
 {return (a+b)}
 function differ(a,b)
 {return (a-b)}
@@ -30,7 +30,7 @@ switch (operator)
 case '+':
     numb2=failnumber(numb2=prompt('Введите второе слагаемое'));
     if (numb2=='false') continue;
-    alert ('Результат сложения '+summa(numb1,numb2)); 
+    alert ('Результат сложения '+sum(numb1,numb2)); 
     break;
 case '-':
     numb2=failnumber(numb2=prompt('Введите вычетаемое значение'));
