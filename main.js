@@ -10,13 +10,13 @@ else
 }
 function summa(a,b)
 {return (a+b)}
-function raznost(a,b)
+function differ(a,b)
 {return (a-b)}
-function umnozhenie(a,b)
+function multi(a,b)
 {return (a*b)}
-function delenie(a,b)
+function division(a,b)
 {return (a/b)}
-function stepen(a,b)
+function degree(a,b)
 {return (a**b)}
 {
 let numb1,operator, numb2;
@@ -35,12 +35,12 @@ case '+':
 case '-':
     numb2=failnumber(numb2=prompt('Введите вычетаемое значение'));
     if (numb2=='false') continue;
-    alert ('Результат вычетания '+raznost(numb1,numb2)); 
+    alert ('Результат вычетания '+differ(numb1,numb2)); 
     break;
 case '*':
     numb2=failnumber(numb2=prompt('Введите второй множитель'));
     if (numb2=='false') continue;
-    alert ('Результат умножения '+umnozhenie(numb1,numb2)); 
+    alert ('Результат умножения '+multi(numb1,numb2)); 
     break;
 case '/':
     numb2=failnumber(numb2=prompt('Введите делитель'));
@@ -50,12 +50,12 @@ case '/':
         alert ('На ноль делить нельзя');
         continue;
     }
-    alert ('Результат деления '+delenie(numb1,numb2)); 
+    alert ('Результат деления '+division(numb1,numb2)); 
     break;
 case '**':
     numb2=failnumber(numb2=prompt('Введите степень в которую возводим'));
     if (numb2=='false') continue;
-    alert ('Результат возведения в степень '+stepen(numb1,numb2)); 
+    alert ('Результат возведения в степень '+degree(numb1,numb2)); 
     break;
 default:
     alert('Unknown operation');       
