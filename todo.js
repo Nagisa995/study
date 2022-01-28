@@ -1,6 +1,6 @@
 {
     const list={
-        'create a task': 'In Progress',
+        'create a new practice task': 'In Progress',
         'make a bad': 'Done',
         'write a post': 'To Do', 
     };
@@ -14,42 +14,23 @@
         return(delete list[task]);
         }
         function showList(list){
-        console.log('Todo:');
+        const status={'To Do':'Todo:','In Progress':'In Progress:',Done:'Done:'};
+        for (let write in status)
+        {
+        console.log(status[write]);
         let count=0;
         for (let task in list){
-            if (list[task]=='To Do')
+            if (list[task]==write)
             {
-            console.log('"'+task+'",');
+            console.log('"'+task+'"');
             count++;
             }            
         }
         if (count==0) console.log('-');
-        console.log('In progress:');
-        count=0;
-        for (let task in list){
-            if (list[task]=="In Progress")
-            {
-            console.log('"'+task+'"');
-            count++;
-            }         
         }
-        if (count==0) console.log('-');
-        console.log('Done:');
-        count=0;
-        for (let task in list){
-            if (list[task]=='Done')
-            {
-            console.log('"'+task+'"');
-            count++;
-            }
-        }
-        if (count==0) console.log('-');
-        }
-    changeStatus('create a task','To Do');
+    }
+    changeStatus('create a new practice task','To Do');
     changeStatus('make a bad','To Do');
     changeStatus('write a post','In Progress');
-    addTask('go home');
-    showList(list);
-    deleteTask('go home');
     showList(list);
 }
