@@ -1,5 +1,6 @@
 {
-    const list = {'create a new practice task': 'In Progress','make a bad': 'Done','write a post': 'To Do',};
+    const list = { 'create a new practice task': 'In Progress', 'make a bad': 'Done', 'write a post': 'To Do', };
+    const status = { 'To Do': 'Todo:', 'In Progress': 'In Progress:', Done: 'Done:', };
     function changeStatus(task, status) {
         return (list[task] = status);
     }
@@ -10,7 +11,6 @@
         return (delete list[task]);
     }
     function showList(list) {
-        const status = { 'To Do': 'Todo:', 'In Progress': 'In Progress:', Done: 'Done:',};
         for (let write in status) {
             console.log(status[write]);
             let count = 0;
