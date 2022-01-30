@@ -1,10 +1,10 @@
-const STATUS = { 'To Do': 'To Do', 'In Progress': 'In Progress', Done: 'Done', };
+const STATUS = { To_Do: 'To Do', In_Progress: 'In Progress', Done: 'Done', };
 const list = { 'create a new practice task': 'In Progress', 'make a bad': 'Done', 'write a post': 'To Do', };
 function changeStatus(task, status) {
     return (list[task] = status);
 }
 function addTask(task) {
-    return (list[task] = STATUS['To Do']);
+    return (list[task] = STATUS.To_Do);
 }
 function deleteTask(task) {
     return (delete list[task]);
