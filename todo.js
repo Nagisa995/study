@@ -1,23 +1,23 @@
-const STATUS = { To_Do: 'To Do', In_Progress: 'In Progress', Done: 'Done', };
-const list = { 'create a new practice task': 'In Progress', 'make a bad': 'Done', 'write a post': 'To Do', };
+const Status = { To_Do: 'To Do', In_Progress: 'In Progress', Done: 'Done', };
+const list = { 'create a new practice task': Status.In_Progress, 'make a bad': Status.Done, 'write a post': Status.To_Do, };
 function changeStatus(task, status) {
     return (list[task] = status);
 }
 function addTask(task) {
-    return (list[task] = STATUS.To_Do);
+    return (list[task] = Status.To_Do);
 }
 function deleteTask(task) {
     return (delete list[task]);
 }
 function showList() {
-    for (let write in STATUS) {
-        let onScreen = `${STATUS[write]}:`;
+    for (let write in Status) {
+        let onScreen = `${Status[write]}:`;
         for (let task in list) {
-            if (list[task] == STATUS[write]) {
+            if (list[task] == Status[write]) {
                 onScreen += `\n${task}`;
             }
         }
-        (onScreen == `${STATUS[write]}:`) ? console.log(`${onScreen}\n-`) : console.log(onScreen);
+        (onScreen == `${Status[write]}:`) ? console.log(`${onScreen}\n-`) : console.log(onScreen);
     }
 }
 
