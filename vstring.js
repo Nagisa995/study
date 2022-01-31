@@ -1,18 +1,19 @@
 function showVerticalMessage_v1(string) {
-    (string.length < 11) ? string = string[0].toUpperCase() + string.slice(1) : string = string[0].toUpperCase() + string.slice(1, 10);
+    let verticalString = '';
+    if (string.length > 10) string = string.slice(0, 10);
     for (let symbol of string) {
-        console.log(symbol);
+        ((symbol === 'м') && (string.indexOf(symbol) === 0)) ? verticalString += `${symbol.toUpperCase()}\n` : verticalString += `${symbol}\n`;
     }
+    console.log(verticalString);
 }
 
-showVerticalMessage_v1(`вертикальный`);
-console.log(`\n`);
+showVerticalMessage_v1(`многоножка`);
 
 
 function showVerticalMessage_v2(string) {
     for (let i = 0; i < string.length && i < 10; i++) {
-        (i == 0) ? console.log(string[i].toUpperCase()) : console.log(string[i]);
+        ((string[i] === 'м') && (i == 0)) ? console.log(string[i].toUpperCase()) : console.log(string[i]);
     }
 }
 
-showVerticalMessage_v2(`горизонтальный`);
+showVerticalMessage_v2(`многоступенчатый`);
