@@ -1,13 +1,14 @@
 function showVerticalMessage_v1(string) {
-    let verticalString = '';
-    if (string.length > 10) string = string.slice(0, 10);
+    let verticalString='';
+    (string[0] === 'м') ? verticalString += `${string[0].toUpperCase()}\n`: verticalString += `${string[0]}\n`;
+    (string.length > 10)? string = string.slice(1, 10):string=string.slice(1);
     for (let symbol of string) {
-        ((symbol === 'м') && (string.indexOf(symbol) === 0)) ? verticalString += `${symbol.toUpperCase()}\n` : verticalString += `${symbol}\n`;
+         verticalString += `${symbol}\n`;
     }
     console.log(verticalString);
 }
 
-showVerticalMessage_v1(`многоножка`);
+showVerticalMessage_v1(`мирмидонец`);
 
 
 function showVerticalMessage_v2(string) {
