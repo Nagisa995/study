@@ -17,42 +17,46 @@ function addTask(task) {
 }
 function changeParameter(task, parameter, change) {
     taskIndex = list.findIndex(element => element.name === task);
-    if (taskIndex > -1) specifications.find(element => element[0] == parameter.toLowerCase()).includes(change) ? list[taskIndex][parameter.toLowerCase()] = change : console.log('changeParametr:fail');
-    else console.log('changeParametr:fail');
+    if (taskIndex > -1) specifications.find(element => element[0] == parameter.toLowerCase()).includes(change) ? list[taskIndex][parameter.toLowerCase()] = change : console.log('changeParameter:fail');
+    else console.log('changeParameter:fail');
 }
 function deleteTask(task) {
     ((index = list.findIndex(element => element.name === task)) > -1) ? list.splice(index, 1) : console.log('deleteTask:fail');
 }
-addTask('take over the world');
-changeDefaultParameter('status', 'In progress');
-addTask('pour tea');
-showBy('STATUS');
-changeParameter('pour tea', 'Status', 'Done');
-showBy('Status');
-deleteTask('pour tea');
-showBy('PrioRity');
 
-function changeDefaultParameter(parameter, status) {
-    (specifications.find(element => element[0] === parameter.toLowerCase()).includes(status)) ? defaultSpecifications[parameter.toLowerCase()] = status : console.log('changeDefaultParameter:fail');
-}
-function addParameter(parameter, status) {
-    specifications.push(`${parameter},${status}`.split(','));
-    defaultSpecifications[parameter] = specifications[specifications.length - 1][1];
-    for (let element of list) {
-        element[parameter] = defaultSpecifications[parameter];
-    }
-}
-function deleteParameter(parameter) {
-    if (parameter.toLowerCase() in defaultSpecifications) {
-        delete defaultSpecifications[parameter.toLowerCase()];
-        specifications.splice(specifications.findIndex(element => element[0] === parameter.toLowerCase()), 1);
-        for (let element of list) {
-            delete element[parameter.toLowerCase()];
-        }
-    }
-    else console.log('deleteParameter:fail');
-}
 
+
+
+//Please do not pay attention, I experimented here:)
+
+//addTask('take over the world');
+//changeDefaultParameter('status', 'In progress');
+//addTask('pour tea');
+//showBy('STATUS');
+//changeParameter('pour tea', 'Status', 'Done');
+//showBy('Status');
+//deleteTask('pour tea');
+//showBy('PrioRity');
+//function changeDefaultParameter(parameter, status) {
+//    (specifications.find(element => element[0] === parameter.toLowerCase()).includes(status)) ? defaultSpecifications[parameter.toLowerCase()] = status : console.log('changeDefaultParameter:fail');
+//}
+//function addParameter(parameter, status) {
+//    specifications.push(`${parameter},${status}`.split(','));
+//    defaultSpecifications[parameter] = specifications[specifications.length - 1][1];
+//    for (let element of list) {
+//        element[parameter] = defaultSpecifications[parameter];
+//    }
+//}
+//function deleteParameter(parameter) {
+//    if (parameter.toLowerCase() in defaultSpecifications) {
+//        delete defaultSpecifications[parameter.toLowerCase()];
+//        specifications.splice(specifications.findIndex(element => element[0] === parameter.toLowerCase()), 1);
+//        for (let element of list) {
+ //           delete element[parameter.toLowerCase()];
+//        }
+//    }
+//    else console.log('deleteParameter:fail');
+//}
 //addParameter('urgency', '1-2 h,4-12 h,12+');
 //changeParameter('take over the world', 'urgency', '12+');
 //changeParameter('test', 'urgency', '4-12 h');
